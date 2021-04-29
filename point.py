@@ -8,7 +8,7 @@ class Point:
         return
     if self.y**2 != self.x**3 + a * x + b:
         raise ValueError('({}, {}) is not on the curve'.format(x, y))
-    
+
   def __repr__(self):
     if self.x is None:
         return 'Point(infinity)'
@@ -38,13 +38,13 @@ class Point:
       y = s * (self.x - x) - self.y
       return __class__(x, y, self.a, self.b)
     if self == other and self.y == 0 * self.x:
-        return __class__(None, None, self.a, self.b)
+      return __class__(None, None, self.a, self.b)
     if self == other:
-      s = (3 + self.x ** 2 + self.a) / (2 * self.y)
+      s = (3 * self.x ** 2 + self.a) / (2 * self.y)
       x = s ** 2 - (2 * self.x)
       y = s * (self.x - x) - self.y
       return __class__(x, y, self.a, self.b)
 
-    
-        
-    
+
+
+
